@@ -4,7 +4,8 @@
 // When size is submitted by the user, call makeGrid()
 //makeGrid inputs = user inputs
 
-function makeGrid() {
+function makeGrid(event) {
+  event.preventDefault();
   console.log('makeGrid firing'); //for debugging
   var rows = Number(inputHeight.value);
   var columns = Number(inputWidth.value);
@@ -15,7 +16,7 @@ function makeGrid() {
   for (var i = 1; i <= rows; i++ ) { //build columns
     pixelGridColumnConstructor += '<td></td>';
   }
-  for (var i = 1; i <= columns; i++) { //stack rows
+  for (var y = 1; y <= columns; y++) { //stack rows
     pixelGridRowConstructor += '<tr>' + pixelGridColumnConstructor + '</tr>';
   }
   pixelGrid.innerHTML = pixelGridRowConstructor; //insert grid to doc
@@ -27,4 +28,4 @@ var inputWidth = document.querySelector('#inputWidth');
 var form = document.querySelector('#sizePicker');
 
 //make eventListener to look for input updates
-form.addEventListener('submit', makeGrid());
+form.addEventListener('submit', makeGrid);
