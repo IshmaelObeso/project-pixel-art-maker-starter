@@ -5,9 +5,11 @@
 //makeGrid inputs = user inputs
 
 function makeGrid(rows, columns) {
+  console.log('makeGrid firing');
   var pixelGrid = document.querySelector('#pixelCanvas'); //get correct object
   var pixelGridRowConstructor = ''; //initialize constructors
   var pixelGridColumnConstructor = '';
+  pixelGrid.innerHTML = '';
   for (var i = 1; i <= rows; i++ ) { //build columns
     pixelGridColumnConstructor += '<td></td>';
   };
@@ -23,7 +25,7 @@ var inputWidth = document.querySelector('#inputWidth');
 var rows = Number(inputHeight.value);
 var columns = Number(inputWidth.value);
 //make eventListener to look for input updates
-inputHeight.addEventListener('click', makeGrid(rows, columns));
-inputWidth.addEventListener('click', makeGrid(rows, columns));
+inputHeight.addEventListener('change', makeGrid(rows, columns));
+inputWidth.addEventListener('change', makeGrid(rows, columns));
 
 //makeGrid(2, 2);
