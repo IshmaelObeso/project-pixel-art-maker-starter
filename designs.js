@@ -22,3 +22,6 @@ var inputHeight = document.querySelector('#inputHeight');
 var inputWidth = document.querySelector('#inputWidth');
 var rows = Number(inputHeight.value);
 var columns = Number(inputWidth.value);
+//make eventListener to look for input updates
+inputHeight.addEventListener('change', makeGrid(rows));
+inputWidth.addEventListener('change', makeGrid(columns);
