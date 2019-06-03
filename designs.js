@@ -6,8 +6,7 @@
 
 
 function makeGrid(event) {
-  //debug messages
-  console.log('makeGrid fired');
+  //console.log('makeGrid fired'); //debug
   event.preventDefault();
   //defining variables
   var pixelGrid = document.querySelector('#pixelCanvas');
@@ -17,11 +16,11 @@ function makeGrid(event) {
   //initialize constructors
   for (var y = 1; y <= rows; y++) { //stack row
     //debug messages
-    console.log('loop1 firing');
+    //console.log('loop1 firing'); //debug
     var pixelGridRow = document.createElement('tr');
     for (var i = 1; i <= columns; i++ ) { //build columns
       //debug messages
-      console.log('loop2 firing');
+      //console.log('loop2 firing'); //debug
       var pixelGridColumn = document.createElement('td');
       pixelGridColumn.addEventListener('click', colorSquares);
       pixelGridRow.appendChild(pixelGridColumn);
@@ -44,10 +43,10 @@ form.addEventListener('submit', makeGrid);
 
 //User can change color of squares
 function colorSquares(event) {
-  console.log('colorSquares fired');
+  //console.log('colorSquares fired'); //debug
   var colorInput = document.querySelector('#colorPicker');
   var colorValue = colorPicker.value;
-  console.log(colorValue);
+  //console.log(colorValue); //debug
   event.target.style.backgroundColor = colorValue;
 
 }
